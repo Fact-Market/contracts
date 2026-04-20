@@ -1,0 +1,28 @@
+{
+  "network": "testnet",
+  "networkGlobalId": -3,
+  "tactCompiler": "^1.6.13",
+  "notes": [
+    "Testnet contract addresses for demo.fact.market. Recommended target for responsible-disclosure reproducers — see ../security/disclosure.md.",
+    "gitTag and bytecodeHash will be populated on first tagged release (v1.0.0)."
+  ],
+  "contracts": {
+    "MarketFactory": {
+      "address": "EQD22YTMI1-cgbQH-8YAGrWf7pj9ZqUC5JRRLiMI4sVSd7om",
+      "deployedAt": "2026-04-15",
+      "gitTag": "TBD-v1.0.0",
+      "bytecodeHash": "TBD-sha256-hex",
+      "tonscan": "https://testnet.tonscan.org/address/EQD22YTMI1-cgbQH-8YAGrWf7pj9ZqUC5JRRLiMI4sVSd7om"
+    },
+    "PrivateMarketFactory": {
+      "address": "EQCrPKajztfZCN8KRaaA5oCiwmV1rOX9nFZR99e8sNKcWWfI",
+      "deployedAt": "2026-04-15",
+      "gitTag": "TBD-v1.0.0",
+      "bytecodeHash": "TBD-sha256-hex",
+      "tonscan": "https://testnet.tonscan.org/address/EQCrPKajztfZCN8KRaaA5oCiwmV1rOX9nFZR99e8sNKcWWfI"
+    }
+  },
+  "verification": {
+    "howToVerify": "git checkout <gitTag>; pnpm install; pnpm build; sha256sum build/MarketFactory_MarketFactory.code.boc; compare to bytecodeHash above and to the on-chain bytecode shown on testnet.tonscan.org."
+  }
+}

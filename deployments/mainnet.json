@@ -1,0 +1,29 @@
+{
+  "network": "mainnet",
+  "networkGlobalId": -239,
+  "tactCompiler": "^1.6.13",
+  "notes": [
+    "Authoritative production contract addresses for fact.market.",
+    "Individual MarketEscrow addresses are deployed per-market by the factories below; discover them via MarketFactory.getMarket(marketId) and MarketFactory.getMarketCount(), or by scanning the factory's outgoing deploys on tonscan.",
+    "gitTag and bytecodeHash will be populated on first tagged release (v1.0.0). Until then, verify bytecode by comparing tonscan's on-chain bytecode to a local build at HEAD."
+  ],
+  "contracts": {
+    "MarketFactory": {
+      "address": "EQDhvANtaSHzSmXz3HS4aIrJduKOok7Wi6FCgT4taWEBAct5",
+      "deployedAt": "2026-04-15",
+      "gitTag": "TBD-v1.0.0",
+      "bytecodeHash": "TBD-sha256-hex",
+      "tonscan": "https://tonscan.org/address/EQDhvANtaSHzSmXz3HS4aIrJduKOok7Wi6FCgT4taWEBAct5"
+    },
+    "PrivateMarketFactory": {
+      "address": "EQBzn8kjafXTUSDi15ZHNrOguFBp0JRSPDRUilRWxmdpcKrx",
+      "deployedAt": "2026-04-15",
+      "gitTag": "TBD-v1.0.0",
+      "bytecodeHash": "TBD-sha256-hex",
+      "tonscan": "https://tonscan.org/address/EQBzn8kjafXTUSDi15ZHNrOguFBp0JRSPDRUilRWxmdpcKrx"
+    }
+  },
+  "verification": {
+    "howToVerify": "git checkout <gitTag>; pnpm install; pnpm build; sha256sum build/MarketFactory_MarketFactory.code.boc; compare to bytecodeHash above and to the on-chain bytecode shown on tonscan."
+  }
+}
