@@ -4,25 +4,33 @@
   "tactCompiler": "^1.6.13",
   "notes": [
     "Testnet contract addresses for demo.fact.market. Recommended target for responsible-disclosure reproducers — see ../security/disclosure.md.",
-    "gitTag and bytecodeHash will be populated on first tagged release (v1.0.0)."
+    "Bytecode hashes match mainnet v1.0.0 — same source, same compiler version, deterministic build."
   ],
   "contracts": {
     "MarketFactory": {
       "address": "EQD22YTMI1-cgbQH-8YAGrWf7pj9ZqUC5JRRLiMI4sVSd7om",
       "deployedAt": "2026-04-15",
-      "gitTag": "TBD-v1.0.0",
-      "bytecodeHash": "TBD-sha256-hex",
+      "gitTag": "v1.0.0",
+      "bytecodeHash": "sha256:aed3d155163e1c66bf4de0df5c876c0d5247ae2e5aaf8ac03113b609040293a5",
+      "bytecodeFile": "build/MarketFactory_MarketFactory.code.boc",
       "tonscan": "https://testnet.tonscan.org/address/EQD22YTMI1-cgbQH-8YAGrWf7pj9ZqUC5JRRLiMI4sVSd7om"
     },
     "PrivateMarketFactory": {
       "address": "EQCrPKajztfZCN8KRaaA5oCiwmV1rOX9nFZR99e8sNKcWWfI",
       "deployedAt": "2026-04-15",
-      "gitTag": "TBD-v1.0.0",
-      "bytecodeHash": "TBD-sha256-hex",
+      "gitTag": "v1.0.0",
+      "bytecodeHash": "sha256:3959247e26aaed8e942d4a206386da76740af3eabaa7dc5d617e2a5dcea861b8",
+      "bytecodeFile": "build/PrivateMarketFactory_PrivateMarketFactory.code.boc",
       "tonscan": "https://testnet.tonscan.org/address/EQCrPKajztfZCN8KRaaA5oCiwmV1rOX9nFZR99e8sNKcWWfI"
+    },
+    "MarketEscrow": {
+      "gitTag": "v1.0.0",
+      "bytecodeHash": "sha256:7aeddba9e7c982aa5e8f54ccecc38a15dca3ad0f4704c9c33866bf9936c9193e",
+      "bytecodeFile": "build/MarketEscrow_MarketEscrow.code.boc",
+      "notes": "Per-market contract deployed by both factories. Individual instances are discoverable via MarketFactory.getMarket(id) / PrivateMarketFactory.getMarket(id)."
     }
   },
   "verification": {
-    "howToVerify": "git checkout <gitTag>; pnpm install; pnpm build; sha256sum build/MarketFactory_MarketFactory.code.boc; compare to bytecodeHash above and to the on-chain bytecode shown on testnet.tonscan.org."
+    "howToVerify": "git checkout v1.0.0 && pnpm install && pnpm build && shasum -a 256 build/MarketFactory_MarketFactory.code.boc build/PrivateMarketFactory_PrivateMarketFactory.code.boc build/MarketEscrow_MarketEscrow.code.boc — compare to the bytecodeHash values above."
   }
 }
